@@ -36,7 +36,7 @@ A Python service designed to collect GPS data from the FleetUp API every 5 minut
 
 ### Option 1: Run directly
 ```bash
-python -m main
+python -m gps_collector/main.py
 ```
 
 ### Option 2: Run as a systemd service (Linux)
@@ -50,7 +50,7 @@ python -m main
     User=yourusername
     WorkingDirectory=/path/to/gps_collector_sample
     EnvironmentFile=/path/to/gps_collector_sample/.env
-    ExecStart=/usr/bin/python3 -m main
+    ExecStart=/usr/bin/python3 -m gps_collector/main.py
     Restart=always
 
     [Install]

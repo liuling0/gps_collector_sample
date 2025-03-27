@@ -1,8 +1,9 @@
 .env
-data/*
-logs/*
-venv/*
-__pycache__/*
-.vscode/*
+data
+logs
+venv
+__pycache__
+.pyc
+.vscode
 !.gitignore
 ```
