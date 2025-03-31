@@ -47,7 +47,7 @@ class ApiClient:
         headers = {"x-api-key": self.config.api_key}
 
         try:
-            response = self.session.get(url, params=params, headers=headers)
+            response = self.session.get(url, params=params, headers=headers, timeout=10) 
             response.raise_for_status()
             data = response.json()
             
@@ -76,7 +76,7 @@ class ApiClient:
         body = {"acctId": self.config.account_id}
 
         try:
-            response = self.session.post(url, json=body, headers=headers)
+            response = self.session.post(url, json=body, headers=headers, timeout=10)  
             response.raise_for_status()
             return response.json().get('data', [])
         except requests.RequestException as e:
